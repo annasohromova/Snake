@@ -13,8 +13,8 @@ namespace uss
     enum Direction
     {
         LEFT,
-        RIGHT, 
-        UP, 
+        RIGHT,
+        UP,
         DOWN
     }
 }

@@ -29,22 +29,22 @@ namespace uss
         }
         public Point(Point p)
         {
-            x= p.x;
-            y= p.y;
+            x = p.x;
+            y = p.y;
             sym = p.sym;
 
         }
         public void Move(int offset, Direction direction)
         {
-            if(direction == Direction.RIGHT) 
+            if (direction == Direction.RIGHT)
             {
-                x = x + offset;         
-            
+                x = x + offset;
+
             }
-            else if(direction == Direction.LEFT) 
-            { 
+            else if (direction == Direction.LEFT)
+            {
                 x = x - offset;
-            
+
             }
             if (direction == Direction.UP)
             {

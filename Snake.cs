@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -12,18 +13,18 @@ namespace uss
 {
     class Snake : Figure
     {
-        Direction direction;
-        public Snake(Point tail, int lenght, Direction direction) 
+        Direction _direction;
+        public Snake(Point tail, int lenght, Direction direction)
         {
             direction = _direction;
             pList = new List<Point>();
-            for(int i = 0; i < lenght; i++) 
+            for (int i = 0; i < lenght; i++)
             {
-                Point p= new Point( tail );
+                Point p = new Point(tail);
                 p.Move(i, direction);
-                pList.Add( p );
+                pList.Add(p);
             }
-        
+
         }
         internal void Move()
         {
@@ -41,7 +42,7 @@ namespace uss
         {
             Point head = pList.Last();
             Point nextPoint = new Point(head);
-            nextPoint.Move(1, direction);
+            nextPoint.Move(1, _direction);
             return nextPoint;
 
 

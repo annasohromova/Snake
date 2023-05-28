@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace uss
 {
     class VerticalLine : Figure
     {
-       
+
         public VerticalLine(int yUp, int yDown, int x, char sym)
         {
             pList = new List<Point>();
