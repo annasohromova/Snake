@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace Snake
+namespace uss
 {
     enum Direction
     {
         LEFT,
-        RIGHT,
-        UP,
+        RIGHT, 
+        UP, 
         DOWN
     }
 }
