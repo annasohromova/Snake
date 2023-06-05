@@ -83,6 +83,5 @@ namespace Snake
             Console.SetCursorPosition(xOffset, yOffset);
             Console.WriteLine(text);
         }
-
     }
 }
