@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NAudio.Wave;
+using NAudio;
 
 namespace Snake
 {
@@ -30,7 +31,15 @@ namespace Snake
             await Task.Run(() =>
             {
                 using (AudioFileReader audioFileReader = new AudioFileReader(Path));
-
+                using (IWavePlayer waveOutDevice = new WaveOutEvent())
+                {
+                    waveOutDevice.Init(audioFileReader);
+                    waveOutDevice.Play();
+                    while (waveOutDevice.PlaybackState == PlaybackState.Playing)
+                    {
+                        Thread.Sleep(50);
+                    }
+                }
             });
             }
         

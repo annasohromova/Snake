@@ -12,6 +12,7 @@ namespace Snake
         static void Main(string[] args)
         {
             Console.SetWindowSize(80, 25);
+            Console.ForegroundColor = ConsoleColor.Green;
 
             Walls walls = new Walls(80, 25);
             walls.Draw();
@@ -28,7 +29,7 @@ namespace Snake
             FoodCreator foodCreator2 = new FoodCreator(80, 25, '#');
             Point food2 = foodCreator2.CreateFood();
             food2.Draw();
-            
+
             while (true)
             {
                 if (walls.IsHit(snake) || snake.IsHitTail())
@@ -45,8 +46,8 @@ namespace Snake
                     food2 = foodCreator2.CreateFood();
                     food2.Draw();
                 }
-                    
-                
+
+
                 else
                 {
                     snake.Move();
@@ -73,8 +74,8 @@ namespace Snake
             WriteText("============================", xOffset, yOffset++);
             WriteText("     G A M E  O V E R ", xOffset + 1, yOffset++);
             yOffset++;
-            WriteText("Autor: Ann Sohromova", xOffset + 2, yOffset++);
-            WriteText("Special for TTHK", xOffset + 1, yOffset++);
+            WriteText("   Autor: Anna Sohromova", xOffset + 2, yOffset++);
+            WriteText("   Special for TTHK", xOffset + 1, yOffset++);
             WriteText("============================", xOffset, yOffset++);
         }
 
@@ -83,5 +84,27 @@ namespace Snake
             Console.SetCursorPosition(xOffset, yOffset);
             Console.WriteLine(text);
         }
-    }
+        static void WriteGameAlgas()
+        {
+            int xOffset = 25;
+            int yOffset = 8;
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.SetCursorPosition(xOffset, yOffset++);
+            WriteText("============================", xOffset, yOffset++);
+            WriteText("     G A M E  A L G A S", xOffset + 1, yOffset++);
+            yOffset++;
+            WriteText("   Autor: Anna Sohromova", xOffset + 2, yOffset++);
+            WriteText("   Special for TTHK", xOffset + 1, yOffset++);
+            WriteText("============================", xOffset, yOffset++);
+        }
+
+        static void WriteText2(String text, int xOffset, int yOffset)
+        {
+            Console.SetCursorPosition(xOffset, yOffset);
+            Console.WriteLine(text);
+        }
+
+    }   
 }
+    
+

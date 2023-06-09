@@ -21,28 +21,22 @@ class Game
         while (playAgain)
         {
             Console.Clear();
-            Console.WriteLine("Змейка");
-            Console.WriteLine("-------");
-            Console.WriteLine("1. Начать игру");
-            Console.WriteLine("2. Просмотреть результаты");
-            Console.WriteLine("3. Выйти");
-            Console.Write("Выберите опцию: ");
+            Console.WriteLine("1. Tulemuste vaatamine");
+            Console.WriteLine("2.Mine");
+            Console.Write("Valige variant: ");
 
             string input = Console.ReadLine();
 
             switch (input)
             {
-                case "1":
+                case "2":
                     PlayGame(players);
                     break;
-                case "2":
+                case "3":
                     ShowResults(players);
                     break;
-                case "3":
-                    playAgain = false;
-                    break;
                 default:
-                    Console.WriteLine("Неправильный выбор. Попробуйте ещё раз.");
+                    Console.WriteLine("Vale valik. Proovige uuesti.");
                     break;
             }
         }
@@ -53,30 +47,27 @@ class Game
 
     static void PlayGame(List<Player> players)
     {
-        Console.Clear();
-        Console.WriteLine("Игра началась!");
-        // Логика игры Змейка
 
         // Получение имени игрока
-        Console.Write("Введите ваше имя: ");
+        Console.Write("Sisestage oma nimi: ");
         string name = Console.ReadLine();
 
         // Получение результата игрока
-        Console.Write("Введите ваш результат: ");
+        Console.Write("Sisestage oma tulemus: ");
         int score = Convert.ToInt32(Console.ReadLine());
 
         // Создание объекта игрока и добавление его в список игроков
         Player player = new Player { Name = name, Score = score };
         players.Add(player);
 
-        Console.WriteLine("Игра окончена. Нажмите любую клавишу, чтобы продолжить.");
+        Console.WriteLine("Mäng on lõppenud. Jätkamiseks vajutage mis tahes klahvi.");
         Console.ReadKey();
     }
 
     static void ShowResults(List<Player> players)
     {
         Console.Clear();
-        Console.WriteLine("Результаты");
+        Console.WriteLine("Tulemused");
         Console.WriteLine("----------");
 
         // Сортировка игроков по убыванию результатов
@@ -84,10 +75,10 @@ class Game
 
         foreach (Player player in players)
         {
-            Console.WriteLine("Имя: {0}, Результат: {1}", player.Name, player.Score);
+            Console.WriteLine("Nimi: {0}, Tulemus: {1}", player.Name, player.Score);
         }
 
-        Console.WriteLine("Нажмите любую клавишу, чтобы продолжить.");
+        Console.WriteLine("Jätkamiseks vajutage ükskõik millist klahvi.");
         Console.ReadKey();
     }
 
@@ -112,7 +103,6 @@ class Game
             }
         }
     }
-
     static void SavePlayersToFile(List<Player> players)
     {
         using (StreamWriter writer = new StreamWriter("results.txt"))
@@ -124,5 +114,10 @@ class Game
         }
     }
 }
+    
+    
+        
+  
+
 
 
