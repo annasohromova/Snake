@@ -14,6 +14,11 @@ namespace Snake
             Console.SetWindowSize(80, 25);
             Console.ForegroundColor = ConsoleColor.Green;
 
+            Game game = new Game();
+            game.WriteGameAlgas();
+            Console.ReadLine();
+            Console.Clear();
+
             Walls walls = new Walls(80, 25);
             walls.Draw();
 
@@ -29,6 +34,7 @@ namespace Snake
             FoodCreator foodCreator2 = new FoodCreator(80, 25, '#');
             Point food2 = foodCreator2.CreateFood();
             food2.Draw();
+
 
             while (true)
             {
@@ -88,7 +94,7 @@ namespace Snake
         {
             int xOffset = 25;
             int yOffset = 8;
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.SetCursorPosition(xOffset, yOffset++);
             WriteText("============================", xOffset, yOffset++);
             WriteText("     G A M E  A L G A S", xOffset + 1, yOffset++);

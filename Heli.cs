@@ -33,7 +33,7 @@ namespace Snake
                 using (AudioFileReader audioFileReader = new AudioFileReader(Path));
                 using (IWavePlayer waveOutDevice = new WaveOutEvent())
                 {
-                    waveOutDevice.Init(audioFileReader);
+                    //waveOutDevice.Init(audioFileReader);
                     waveOutDevice.Play();
                     while (waveOutDevice.PlaybackState == PlaybackState.Playing)
                     {
